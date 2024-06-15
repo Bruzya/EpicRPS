@@ -225,6 +225,7 @@ final class GameViewController: UIViewController {
         rockButton.tintColor = .yellowLighter
         rockBtnBackground.backgroundColor = .blueDarker
         rockBtnBackground.addTopInnerShadow()
+        secondPassed = -1
         
         play(sign: .rock)
     }
@@ -232,11 +233,13 @@ final class GameViewController: UIViewController {
     
     @objc private func paperButtonTapped() {
         paperBtnBackground.addTopInnerShadow()
+        secondPassed = -1
         play(sign: .paper)
     }
     
     
     @objc private func scissorsButtonTapped() {
+        secondPassed = -1
         play(sign: .scissors)
     }
     
@@ -408,9 +411,6 @@ final class GameViewController: UIViewController {
             
             timeProgressScaleView.progress = percentageProgress
             timeLabel.text = "00:\(secondPassed/10)\(secondPassed%10)"
-            
-            print(secondPassed)
-            print(percentageProgress)
         } else {
             timer.invalidate()
             
