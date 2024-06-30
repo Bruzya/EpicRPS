@@ -29,8 +29,7 @@ final class StatisticsViewController: UIViewController {
     Player(name: "Player8", avatarName: "scissorsHand", victories: 8, loses: 1, score: 0, highscore: 0)
     ]
     
-    private let avatar: UIImage? = nil
-
+    private let users: [User] = [.init(username: "bruzya", avatarImage: "lightning", highscore: 0)]
     
     //MARK: - Lifecycle
     

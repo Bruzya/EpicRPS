@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522898A02C31C67A0013FF87 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228989F2C31C67A0013FF87 /* User.swift */; };
 		526DF76B2C1B4115008A7818 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DF76A2C1B4115008A7818 /* UIView + ext.swift */; };
 		526DF76F2C1B71F4008A7818 /* RPSSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DF76E2C1B71F4008A7818 /* RPSSign.swift */; };
 		526DF7712C1B7291008A7818 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DF7702C1B7291008A7818 /* GameState.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5228989F2C31C67A0013FF87 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		526DF76A2C1B4115008A7818 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		526DF76E2C1B71F4008A7818 /* RPSSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RPSSign.swift; path = EpicRPS/Model/RPSSign.swift; sourceTree = SOURCE_ROOT; };
 		526DF7702C1B7291008A7818 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameState.swift; path = EpicRPS/Model/GameState.swift; sourceTree = SOURCE_ROOT; };
@@ -190,6 +192,7 @@
 				526DF76E2C1B71F4008A7818 /* RPSSign.swift */,
 				526DF7702C1B7291008A7818 /* GameState.swift */,
 				526DF7742C1DB111008A7818 /* Player.swift */,
+				5228989F2C31C67A0013FF87 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				526DF7A52C26149D008A7818 /* UIButton + ext.swift in Sources */,
 				526DF76F2C1B71F4008A7818 /* RPSSign.swift in Sources */,
 				526DF7AF2C2BF213008A7818 /* RPSSettingsView.swift in Sources */,
+				522898A02C31C67A0013FF87 /* User.swift in Sources */,
 				5272E25E2C1676940083F7FC /* Font.swift in Sources */,
 				526DF7CA2C303B2E008A7818 /* RPSUserNameTextFieldAlert.swift in Sources */,
 				526DF78E2C1F9BF3008A7818 /* UIProgressView + ext.swift in Sources */,
