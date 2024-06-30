@@ -60,8 +60,15 @@ private extension StatisticsViewController {
         let alert = RPSUserAvatarAlert { [weak self] image in
             self?.userView.userAvatarButton.setImage(image, for: .normal)
         }
-        
-        self.presentRPSALertOnMainThread(alert: alert)
+        presentRPSALertOnMainThread(alert: alert)
+    }
+    
+    
+    @objc func changeNameTextField() {
+        let alert = RPSUserNameTextFieldAlert { [weak self] text in
+            self?.userView.userNameButton.setTitle(text, for: .normal)
+        }
+        presentRPSALertOnMainThread(alert: alert)
     }
     
     
@@ -74,6 +81,7 @@ private extension StatisticsViewController {
         
         view.backgroundColor = .greyWhite
         userView.userAvatarButton.addTarget(self, action: #selector(changeAvatarButton), for: .touchUpInside)
+        userView.userNameButton.addTarget(self, action: #selector(changeNameTextField), for: .touchUpInside)
 
     }
     

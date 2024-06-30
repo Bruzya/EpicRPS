@@ -26,20 +26,16 @@ final class RPSUserView: UIView {
         return btn
     }()
     
-    private lazy var userNameTextField: UITextField = {
-       let txtFld = UITextField()
-        txtFld.placeholder = "Username"
-        txtFld.layer.cornerRadius = 20
-        txtFld.layer.borderColor = UIColor.greyLight.cgColor
-        txtFld.layer.borderWidth = 0.5
-        txtFld.textColor = .blueLight
-        txtFld.font = Font.getFont(.rubickBold, size: 16)
-        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 0))
-        txtFld.leftView = leftView
-        txtFld.leftViewMode = .always
-        txtFld.translatesAutoresizingMaskIntoConstraints = false
-        return txtFld
-    }()
+    public lazy var userNameButton: UIButton = {
+        $0.setTitle("Username", for: .normal)
+        $0.setTitleColor(.blueLight, for: .normal)
+        $0.titleLabel?.font = Font.getFont(.rubickBold, size: 16)
+        $0.contentHorizontalAlignment = .center
+        $0.layer.cornerRadius = 10
+        $0.backgroundColor = .white
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+    }(UIButton())
     
     
     //MARK: - Lifecycle
@@ -62,7 +58,7 @@ private extension RPSUserView {
     func configure() {
         addSubviews(userAvatarBackgroundView,
                     userAvatarButton,
-                    userNameTextField)
+                    userNameButton)
         
         backgroundColor = .clear
         translatesAutoresizingMaskIntoConstraints = false
@@ -81,10 +77,10 @@ private extension RPSUserView {
             userAvatarButton.heightAnchor.constraint(equalToConstant: 40),
             userAvatarButton.widthAnchor.constraint(equalToConstant: 34),
             
-            userNameTextField.topAnchor.constraint(equalTo: userAvatarBackgroundView.topAnchor),
-            userNameTextField.leadingAnchor.constraint(equalTo: userAvatarBackgroundView.trailingAnchor, constant: 8),
-            userNameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -55),
-            userNameTextField.heightAnchor.constraint(equalToConstant: 45)
+            userNameButton.centerYAnchor.constraint(equalTo: userAvatarBackgroundView.centerYAnchor),
+            userNameButton.leadingAnchor.constraint(equalTo: userAvatarBackgroundView.trailingAnchor, constant: 10),
+            userNameButton.heightAnchor.constraint(equalToConstant: 20),
+            userNameButton.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
 }

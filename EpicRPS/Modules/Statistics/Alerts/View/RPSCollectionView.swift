@@ -14,13 +14,12 @@ final class RPSCollectionView: UICollectionView {
     private let collectionLayout = UICollectionViewFlowLayout()
     
     private var avatars = [UIImage]()
-    
-    private let completion: (_ index: IndexPath) -> Void
+    private let completion: (IndexPath) -> Void
     
     
     //MARK: - Lifecycle
 
-    init(avatars: [UIImage], completion: @escaping ((_ index: IndexPath) -> Void)) {
+    init(avatars: [UIImage], completion: @escaping ((IndexPath) -> Void)) {
         self.avatars = avatars
         self.completion = completion
         super.init(frame: .zero, collectionViewLayout: collectionLayout)

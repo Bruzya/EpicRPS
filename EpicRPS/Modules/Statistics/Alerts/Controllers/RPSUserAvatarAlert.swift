@@ -7,16 +7,10 @@
 
 import UIKit
 
-final class RPSUserAvatarAlert: UIViewController {
+class RPSUserAvatarAlert: UIViewController {
     
     //MARK: - UI
-    
-    private lazy var collectionView = UICollectionView()
-    private lazy var okButton = RPSConfirmButton { [weak self] in
-        self?.dismiss(animated: true)
-    }
-    
-    
+
     private let containerView: UIView = {
         $0.backgroundColor = .systemBackground
         $0.layer.cornerRadius = 23
@@ -33,8 +27,13 @@ final class RPSUserAvatarAlert: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIView())
+   
+    private lazy var collectionView = UICollectionView()
+    private lazy var okButton = RPSConfirmButton { [weak self] in
+        self?.dismiss(animated: true)
+    }
     
-
+    
     //MARK: - Properties
     
     private let avatars: [UIImage] = [.wrestler, .happyWrestler, .sadWrestler, .lightning, .marvelWrestler, .scissorsHand, .dcWrestler, .alien]
