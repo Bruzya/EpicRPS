@@ -15,12 +15,18 @@ enum ButtonTimeKeys: Int {
 
 final class RPSTimeButton: UIButton {
     
+    //MARK: - Properties
+    
+    private let text: String
+    
+    
     //MARK: - Lifecycle
     
     init(text: String) {
+        self.text = text
         super.init(frame: .zero)
         
-        configure(title: text)
+        configure()
         changeState()
     }
     
@@ -33,12 +39,12 @@ final class RPSTimeButton: UIButton {
 //MARK: - Internal Methods
 
 private extension RPSTimeButton {
-    private func configure(title: String) {
+    private func configure() {
         layer.cornerRadius = 15
         var configuration = UIButton.Configuration.plain()
         var container = AttributeContainer()
         container.font = Font.getFont(.rubickBlack, size: 16)
-        configuration.attributedTitle = AttributedString(title, attributes: container)
+        configuration.attributedTitle = AttributedString(text, attributes: container)
         configuration.baseBackgroundColor = .brownBase
         self.configuration = configuration
         translatesAutoresizingMaskIntoConstraints = false

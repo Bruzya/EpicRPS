@@ -21,7 +21,7 @@ final class RPSUserView: UIView {
     
     public lazy var userAvatarButton: UIButton = {
         let btn = UIButton()
-        btn.setImage(.alien, for: .normal)
+        btn.setImage(.wrestler, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -43,10 +43,8 @@ final class RPSUserView: UIView {
     
     
     //MARK: - Lifecycle
-    
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
         configure()
         setConstraints()
     }

@@ -21,6 +21,8 @@ final class RPSImageView: UIImageView {
     convenience init(use image: UIImage) {
         self.init(frame: .zero)
         self.image = image
+        
+        configure()
     }
     
     

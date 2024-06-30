@@ -25,4 +25,14 @@ extension UIViewController {
         vc.navigationItem.leftBarButtonItem = leftBarButton
         vc.navigationItem.rightBarButtonItem = rightBarButton
     }
+    
+    
+    func presentRPSALertOnMainThread(alert: UIViewController) {
+        DispatchQueue.main.async {
+            let alert = alert
+            alert.modalPresentationStyle = .overFullScreen
+            alert.modalTransitionStyle = .crossDissolve
+            self.present(alert, animated: true)
+        }
+    }
 }

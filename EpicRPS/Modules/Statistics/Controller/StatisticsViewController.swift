@@ -11,7 +11,7 @@ final class StatisticsViewController: UIViewController {
     
     //MARK: - UI
     
-    private let userView = RPSUserView()
+    private var userView = RPSUserView()
     private let titlesView = RPSTopTitlesView()
     private var tableView = RPSTableView()
     
@@ -29,6 +29,8 @@ final class StatisticsViewController: UIViewController {
     Player(name: "Player8", avatarName: "scissorsHand", victories: 8, loses: 1, score: 0, highscore: 0)
     ]
     
+    private let avatar: UIImage? = nil
+
     
     //MARK: - Lifecycle
     
@@ -55,7 +57,7 @@ private extension StatisticsViewController {
     
     
     @objc func changeAvatarButton() {
-        print("did tap")
+        self.presentRPSALertOnMainThread(alert: RPSUserAvatarAlert())
     }
     
     
