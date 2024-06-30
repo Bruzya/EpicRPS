@@ -113,6 +113,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5228989B2C3195580013FF87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				526DF7CD2C30B0C7008A7818 /* RPSCollectionView.swift */,
+				526DF7CB2C30AFE3008A7818 /* RPSConfirmButton.swift */,
+				5228989D2C31957B0013FF87 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5228989C2C3195620013FF87 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				526DF7C72C303B25008A7818 /* RPSUserAvatarAlert.swift */,
+				526DF7C92C303B2E008A7818 /* RPSUserNameTextFieldAlert.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5228989D2C31957B0013FF87 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				526DF7CF2C30B15F008A7818 /* RPSCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		526DF7832C1F9226008A7818 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,13 +234,10 @@
 		526DF7B62C2C1D30008A7818 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				526DF7C62C303B0B008A7818 /* Alerts */,
 				526DF7BC2C2C2169008A7818 /* Cell */,
 				526DF7BF2C3029C7008A7818 /* RPSUserView.swift */,
 				526DF7C12C302BA5008A7818 /* RPSTopTitlesView.swift */,
 				526DF7BA2C2C20D8008A7818 /* RPSTableView.swift */,
-				526DF7CB2C30AFE3008A7818 /* RPSConfirmButton.swift */,
-				526DF7CD2C30B0C7008A7818 /* RPSCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				526DF7BD2C2C2177008A7818 /* RPSTableViewCell.swift */,
-				526DF7CF2C30B15F008A7818 /* RPSCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -238,8 +261,8 @@
 		526DF7C62C303B0B008A7818 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
-				526DF7C72C303B25008A7818 /* RPSUserAvatarAlert.swift */,
-				526DF7C92C303B2E008A7818 /* RPSUserNameTextFieldAlert.swift */,
+				5228989B2C3195580013FF87 /* View */,
+				5228989C2C3195620013FF87 /* Controllers */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -385,6 +408,7 @@
 		5272E2762C1681BF0083F7FC /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				526DF7C62C303B0B008A7818 /* Alerts */,
 				526DF7B62C2C1D30008A7818 /* View */,
 				526DF7B72C2C1D3B008A7818 /* Controller */,
 			);
