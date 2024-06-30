@@ -11,7 +11,7 @@ final class RPSUserAvatarAlert: UIViewController {
     
     //MARK: - UI
     
-    private lazy var collectionView = RPSCollectionView()
+    private lazy var collectionView = UICollectionView()
     private lazy var okButton = RPSConfirmButton { [weak self] in
         self?.dismiss(animated: true)
     }
@@ -37,10 +37,23 @@ final class RPSUserAvatarAlert: UIViewController {
 
     //MARK: - Properties
     
-    private lazy var avatars: [UIImage] = [.wrestler, .happyWrestler, .sadWrestler, .lightning, .marvelWrestler, .scissorsHand, .dcWrestler, .alien]
+    private let avatars: [UIImage] = [.wrestler, .happyWrestler, .sadWrestler, .lightning, .marvelWrestler, .scissorsHand, .dcWrestler, .alien]
 
+    private let completion: (UIImage) -> Void
+    
     
     //MARK: - Lifecycle
+    
+    init(completion: @escaping (UIImage) -> Void) {
+        self.completion = completion
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +69,11 @@ final class RPSUserAvatarAlert: UIViewController {
 
 private extension RPSUserAvatarAlert {
     func configureCollectionView() {
-        collectionView = RPSCollectionView(avatars: avatars)
+        
+        collectionView = RPSCollectionView(avatars: avatars, completion: { [weak self] index in
+            guard let self else { return }
+            completion(avatars[index.item])
+        })
     }
     
     

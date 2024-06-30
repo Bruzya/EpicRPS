@@ -15,16 +15,14 @@ final class RPSCollectionView: UICollectionView {
     
     private var avatars = [UIImage]()
     
+    private let completion: (_ index: IndexPath) -> Void
+    
     
     //MARK: - Lifecycle
-    
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: .zero, collectionViewLayout: collectionLayout)
-    }
 
-
-    init(avatars: [UIImage]) {
+    init(avatars: [UIImage], completion: @escaping ((_ index: IndexPath) -> Void)) {
         self.avatars = avatars
+        self.completion = completion
         super.init(frame: .zero, collectionViewLayout: collectionLayout)
 
         configure()
@@ -61,7 +59,7 @@ private extension RPSCollectionView {
 
 extension RPSCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        completion(indexPath)
     }
 }
 

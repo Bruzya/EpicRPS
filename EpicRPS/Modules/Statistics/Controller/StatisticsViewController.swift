@@ -13,7 +13,7 @@ final class StatisticsViewController: UIViewController {
     
     private var userView = RPSUserView()
     private let titlesView = RPSTopTitlesView()
-    private var tableView = RPSTableView()
+    private var tableView = UITableView()
     
     
     //MARK: - Properties
@@ -57,7 +57,11 @@ private extension StatisticsViewController {
     
     
     @objc func changeAvatarButton() {
-        self.presentRPSALertOnMainThread(alert: RPSUserAvatarAlert())
+        let alert = RPSUserAvatarAlert { [weak self] image in
+            self?.userView.userAvatarButton.setImage(image, for: .normal)
+        }
+        
+        self.presentRPSALertOnMainThread(alert: alert)
     }
     
     
